@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Test</title>
+
+   <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Chewy&family=Sour+Gummy:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Sour Gummy", cursive, sans-serif;
+            background-image: url(https://i.pinimg.com/1200x/89/7d/63/897d6330c13666cb81f99e269e4baaaa.jpg);
+            margin: 0;
+            padding: 0;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        nav {
+            background: #660B05;
+            padding: 15px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav h2 {
+            font-family: "Chango", cursive;
+            font-size: 22px;
+            margin: 0;
+        }
+
+        nav .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 12px;
+            font-weight: bold;
+        }
+
+        nav .links a:hover {
+            text-decoration: underline;
+        }
+
+        .banner {
+            background-color: #A31D1D;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .banner h1 {
+            font-family: "Chewy", cursive;
+            font-size: 40px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 25px; 
+            margin: 10px 0;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card h3 {
+            font-family: "Chewy", cursive;
+            color: #A31D1D;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-select-custom {
+            border: 2px solid #A31D1D;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        
+        .form-select-custom:focus {
+            border-color: #660B05;
+            box-shadow: 0 0 0 0.25rem rgba(163, 29, 29, 0.25);
+        }
+
+        .btn-club {
+            background-color: #A31D1D; 
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-family: "Sour Gummy", cursive;
+            box-shadow: 0 4px 0 #660B05;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .btn-club:hover {
+            background-color: #C62828; 
+            box-shadow: 0 5px 0 #5a0703;
+        }
+
+        .btn-club:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #5a0703;
+        }
+
+        .info-content p {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #4E342E; 
+        }
+        
+        .info-content strong {
+            color: #A31D1D;
+            font-weight: 700;
+            min-width: 120px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .divider {
+            border-top: 2px solid #A31D1D;
+            margin: 15px 0;
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 40px 0 60px 0;
+        }
+
+        .back-home a {
+            background-color: #A31D1D;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .back-home a:hover {
+            background-color: #C62828;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 32px;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav h2 {
+                margin-bottom: 10px;
+            }
+            .menu-card {
+                padding: 15px;
+            }
+            .menu-card {
+                height: auto; 
+            }
+            #DIA {
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav h2 {
+                font-size: 20px;
+            }
+            .banner h1 {
+                font-size: 26px;
+            }
+            .menu-card h3 {
+                font-size: 22px;
+            }
+        }
+        footer {
+            background-color: #660B05;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .social-links {
+            margin: 10px 0;
+        }
+
+        footer .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        footer .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer .contact-info {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 20px 15px;
+            }
+            footer .contact-info {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <h2>🏫 Silver Academy of Silveridia</h2>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="grade-calculator.html">Grade Calculator</a>
+            <a href="clubs.html">Clubs</a>
+        </div>
+    </nav>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <h1>School Clubs & Activities</h1>
+        <p>Select a club to view its details, meeting times, and requirements.</p>
+    </div>
+
+    <!-- INFO -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="menu-card w-100 card-box">
+                    <h3 class="mb-4">✨ Choose Your Club ✨</h3>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
+                        <button type="button" class="btn-club" id="CommunicationArts" py-click="show_CommunicationArts"> ✍️ Communication Arts </button>
+                        <button type="button" class="btn-club" id="ScienceClub" py-click="show_ScienceClub">🔬 Science Club </button>
+                        <button type="button" class="btn-club" id="VolleyballVarsity" py-click="show_VolleyballVarsity"> 🏅 Volleyball Varsity </button>
+                    </div>
+                    <h3 class="mb-3">🎀 Club Information</h3>
+                    <div class="info-box">
+                        <p id="club-name" class="fw-bold fs-4 text-center text-danger mb-3"></p>
+                        <p id="club-description"><strong>Description:</strong></p>
+                        <p id="club-meeting"><strong>Meeting Time:</strong></p>
+                        <p id="club-location"><strong>Location:</strong></p>
+                        <p id="club-advisor"><strong>Advisor:</strong></p>
+                        <p id="club-members"><strong>No. of Members:</strong></p>
+                        <p id="club-category"><strong>Category:</strong></p>
+                    </div>
+                    <p id="club-notes" class="text-muted small mt-4 text-center">
+                        Membership is currently open to all grade levels. 🌸
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BACK TO HOME BUTTON -->
+        <div class="back-home">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+        <footer>
+            <p>🏫 Silver Academy of Silveridia</p>
+            <p>© 2000 - 2025. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a> |
+                <a href="#">Instagram</a>
+            </div>
+            <p class="contact-info">123 Silver St., Silveridia City | info@silveracademy.com</p>
+        </footer>
+
+    <!-- PYTHON SCRIPT -->
+    <py-script src="clubs.py"></py-script>
+</body>
+</html>
